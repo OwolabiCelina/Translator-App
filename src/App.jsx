@@ -218,11 +218,12 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='py-8 bg-blue-600 min-h-screen '>
+        <div className='items-center bg-slate-500 p-8'>
         <div className="">
-          <div className="">
-            <label className='mr-4'>Language you speak</label>
-            <select className='text-black' name="source" id=""
+          <div className="mb-4">
+            <label className='mr-4 text-xl'>Language you speak</label>
+            <select className='text-black rounded-md p-2 ' name="source" id=""
               onChange={(e) => setQueryLang(e.target.value)}
             >
               <option value="en-US">English</option>
@@ -232,8 +233,8 @@ function App() {
           </div>
 
           <div className="">
-            <label className='mr-4'>Language you would like to translate to</label>
-            <select className='text-black'
+            <label className='mr-4 text-xl'>Language you would like to translate to</label>
+            <select className='text-black rounded-md p-2'
               onChange={(e) => setResponseLang(e.target.value)}
               name="target" id="">
               <option value="es-US">Spanish</option>
@@ -244,7 +245,7 @@ function App() {
         </div>
 
         <div className="flex flex-col gap-2 w-[300px] m-auto pb-4">
-          <label htmlFor="">Your text:</label>
+          <label htmlFor="text-">Your text:</label>
           <input
             placeholder='Type in the text you would like to translate'
             className='border-[2px] border-gray-700 bg-transparent w-[300px] p-2 rounded-lg'
@@ -259,11 +260,12 @@ function App() {
         </div>
 
         <button
-          className='rounded-md p-4 bg-blue-900'
+          className='rounded-md p-4 bg-blue-800'
           onClick={handleSubmit}
         >
           {isLoader ? "Loading..." : "Translate"}
         </button>
+        </div>
       </div>
     </>
   )
